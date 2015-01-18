@@ -1,0 +1,9 @@
+.container {
+	@extend %margin-left-right-auto;
+	max-width: $content-width;
+	padding: 0 $quarter-spacing-unit;
+
+	@media #{$media-large} {
+		padding: 0;
+	}
+}

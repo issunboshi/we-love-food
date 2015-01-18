@@ -1,0 +1,40 @@
+.form {
+	&__title {
+		
+	}
+
+	&__fields {
+
+	}
+
+	&__control {
+		@extend %border-zero;
+		width: 100%;
+		min-height: $base-spacing-unit;
+		margin-bottom: $quarter-spacing-unit;
+
+		color: black;
+
+		&--text {
+			padding: $quarter-spacing-unit
+		}
+
+		&--textarea {
+			padding: $quarter-spacing-unit;
+			resize: none;
+		}
+
+		&.ng-dirty.ng-valid {
+			border: 1px solid $secondary-brand;
+		}
+
+		&.ng-dirty.ng-invalid {
+			border: 1px solid red;
+		}
+	}
+
+	&__btn {
+		@extend %border-zero;
+		-webkit-appearance: none;
+	}
+}

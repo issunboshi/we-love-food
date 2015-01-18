@@ -1,0 +1,17 @@
+.product {
+	&__header {
+		background-color: $brand;
+		padding: $half-spacing-unit;
+	}
+
+	&__title {
+		color: white;
+		margin-top: 0;
+	}
+
+	&__content {
+		color: white;
+		margin-bottom: 0;
+	}
+
+}

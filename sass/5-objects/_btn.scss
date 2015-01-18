@@ -1,0 +1,7 @@
+.btn {
+	@extend %btn;
+
+	&--fancy {
+		@extend %btn--fancy;
+	}
+}

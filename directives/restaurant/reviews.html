@@ -1,0 +1,26 @@
+<form class="form" name="reviewForm" ng-submit="reviewForm.$valid && reviewCtrl.addReview(restaurant)" novalidate>
+	<blockquote class="tabs__quote" ng-show="reviewCtrl.review.stars">
+		<h5 class="tabs__title">
+			Your review
+		</h5>
+		<strong class="tabs__quote__standout">{{reviewCtrl.review.stars}} stars</strong>
+		{{reviewCtrl.review.body}}
+		<cite class="tabs__quote__meta">{{reviewCtrl.review.createdOn | date}} — {{reviewCtrl.review.author}}</cite>
+	</blockquote>	
+
+	<h4 class="form__title">Submit a Review</h4>
+	<fieldset class="form__fields">
+		<select ng-model="reviewCtrl.review.stars" class="form__control" ng-options="stars for stars in [5,4,3,2,1]"  title="Stars" required>
+		 <option value="">Rate the restaurant</option>
+		</select>
+	</fieldset>
+	<fieldset class="form__fields">
+		<textarea ng-model="reviewCtrl.review.body" class="form__control form__control--textarea" placeholder="Write a short review of the restaurant..." title="Review" required></textarea>
+	</fieldset>
+	<fieldset class="form__fields">
+		<input ng-model="reviewCtrl.review.author" type="email" class="form__control form__control--text" placeholder="jimmyDean@example.org" title="Email" required />
+	</fieldset>
+	<fieldset class="form__fields">
+		<input type="submit" class="btn form__btn" value="Submit Review" />
+	</fieldset>
+</form>

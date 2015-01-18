@@ -1,0 +1,22 @@
+img {
+	@extend %max-width-100;
+}
+
+// Only current multi-browser styling of placeholder text in form fields
+::-webkit-input-placeholder, ::-webkit-textarea-placeholder { /* WebKit browsers */
+	color: black;
+	opacity: 0.75;
+
+}
+input:-moz-placeholder, textarea:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color: black;
+	opacity: 0.75;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color: black;
+	opacity: 0.75;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder { /* Internet Explorer 10+ */
+	color: black;
+	opacity: 0.75;
+}

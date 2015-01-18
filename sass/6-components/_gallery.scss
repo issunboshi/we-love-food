@@ -1,0 +1,22 @@
+.gallery {
+	@extend %align-center;
+	padding: $base-spacing-unit;
+
+	&__primary-image {
+		border: $brand 2px solid;
+	}
+	&__listing {
+		@extend %list-reset;
+		@extend %flex;
+		@extend %flex-center;
+		@extend %flex-column;
+
+		@media #{$media-large} {
+			@include flex-row;
+		}
+	}
+	&__item {
+	}
+	&__thumbnail {
+	}
+}
