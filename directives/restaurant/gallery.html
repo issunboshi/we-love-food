@@ -1,8 +1,0 @@
-<div class="gallery">
-	<img class="gallery__primary-image" ng-src="{{restaurant.images[gallery.current]}}" alt="">
-	<ul class="gallery__listing" ng-show="restaurant.images.length">
-		<li class="gallery__item" ng-repeat="image in restaurant.images" ng-click="gallery.setCurrent($index)">
-			<img class="gallery__thumbnail" ng-src="{{image}}" alt="">
-		</li>
-	</ul>
-</div>
