@@ -1,4 +1,4 @@
-var js = function() {
+var enhancePage = function() {
 
     var html = document.getElementsByTagName('html')[0],
     addClass = 'js',
@@ -7,9 +7,7 @@ var js = function() {
     if (html.classList) {
         html.classList.add(addClass);
         html.classList.remove(removalClass);
-    }
-};
+    };
+}
 
-window.onload = function() {
-    js();
-};
+export {enhancePage}
