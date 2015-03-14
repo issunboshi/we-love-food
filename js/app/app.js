@@ -1,2 +1,3 @@
-import {enhancePage} from 'modules/bootstrap'
+import {enhancePage} from 'modules/bootstrap';
+
 enhancePage();

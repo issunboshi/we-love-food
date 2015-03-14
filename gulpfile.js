@@ -28,10 +28,8 @@ var cssSrcDir 		= basePath + 'sass';
 var cssSrcFiles 	= cssSrcDir + '/**/*.scss';
 var cssDestDir		= basePath + 'css';
 
-var jsSrcDir      = basePath + 'js/src';
-var jsSrcFiles    = [ jsSrcDir + '/*.js'];
-var jsDestDir     = basePath + 'js/dist';
-var jsDestFiles    = [ jsDestDir + '/*.js'];
+var jsSrcDir      = basePath + 'js';
+var jsSrcFiles    = [jsSrcDir + '/**/*.js', !jsSrcDir + '/es6-module-loader.js', !jsSrcDir + '/system.js', !jsSrcDir + '/traceur.js', !jsSrcDir + '/vendor/*.js'];
 
 // ==========================================================================
 // # TASKS
@@ -61,15 +59,6 @@ gulp.task('jshint', function() {
     .pipe(plugins.jshint.reporter(plugins.stylish));
 });
 
-gulp.task('javascript', function() {
-  gulp.src(jsSrcFiles)
-    .pipe(plugins.concat('app.js'))
-    .pipe(gulp.dest('js/dist/'))
-    .pipe(plugins.uglify())
-    .pipe(plugins.concat('app.min.js'))
-    .pipe(gulp.dest('js/dist/'))
-});
-
 /* # CSS
    ========================================================================== */
 
@@ -92,8 +81,7 @@ gulp.task('css', function() {
 // Default task
 gulp.task('default', ['css'], function () {
     gulp.watch( cssSrcFiles, ['css']);
-    gulp.watch( jsSrcFiles, ['jshint', 'javascript']);
-    gulp.watch( [jsDestFiles, './test/**/*.js', './test/*.js'], ['test']);
+    gulp.watch( [jsSrcFiles, './test/**/*.js', './test/*.js'], ['jshint', 'test']);
 });
 
 // Build
